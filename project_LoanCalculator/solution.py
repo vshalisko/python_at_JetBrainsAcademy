@@ -59,7 +59,6 @@ if selector == "n":
     
 elif selector == "a":
     ## annuity unknown
-    i = loan_interest / (12 * 100)
     r = math.pow(i + 1, n)
     A = math.ceil(P * (i * r / (r - 1)))
     print("Your monthly payment = {}!".format(A))
@@ -69,7 +68,6 @@ elif selector == "a":
     
 elif selector == "p":
     ## loan principal unknown
-    i = loan_interest / (12 * 100)
     r = math.pow(i + 1, n)
     P = math.ceil(A / (i * r / (r - 1)))
     print("Your loan principal = {}!".format(P))
@@ -79,7 +77,6 @@ elif selector == "p":
 
 elif selector == "d":
     ## differential payments
-    i = loan_interest / (12 * 100)
     total = 0
     for m in range(1, n + 1):
         d = math.ceil((P / n) + i * (P - P * (m - 1) / n))
