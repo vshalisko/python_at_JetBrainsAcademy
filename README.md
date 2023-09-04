@@ -11,3 +11,4 @@ Chronological order of completion
 7) Honest calculator
 8) Read quality control (Bioinformatics)
 9) Generate randomness
+10) Salary prediction
