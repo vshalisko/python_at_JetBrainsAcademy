@@ -18,12 +18,9 @@ class CustomLogisticRegression:
         return 1 / (1 + math.exp(-t))
 
     def predict_proba(self, row, coef_):
-        #print(row)
-        #print(coef_)
         t = coef_[0]
         for i in range(1, len(coef_)):
             t += coef_[i] * row[i-1]
-        #print(t)
         return self.sigmoid(t)
 
 data = datasets.load_breast_cancer()
@@ -31,22 +28,13 @@ X = pd.DataFrame(data.data, columns=data.feature_names)
 X = X.loc[:,['worst concave points','worst perimeter']]
 y = data['target']
 
-#print(X)
-#print(y)
-
-scale= StandardScaler()
+scale = StandardScaler()
 scaled_X = pd.DataFrame(scale.fit_transform(X),
                         columns=['worst concave points','worst perimeter'])
-#print(scaled_X)
 
 X_train, X_test, y_train, y_test = train_test_split(scaled_X, y, train_size=0.8, random_state=43)
-#print(X_train)
-#print(X_test)
-#print(y_train)
-#print(y_test)
 
 result = []
-
 for j in range(0,10):
     #print(X.iloc[j,:])
     clr = CustomLogisticRegression()
