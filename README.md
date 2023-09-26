@@ -12,6 +12,7 @@ Chronological order of completion
 8) Read quality control (Bioinformatics)
 9) Generate randomness
 10) Salary prediction
-11) Nobel Laureates
-12) Logistic regression from scratch
-13) Random forest from scartch
+11) Data analysis for hospitals
+12) Nobel laureates
+13) Logistic regression from scratch
+14) Random forest from scartch
