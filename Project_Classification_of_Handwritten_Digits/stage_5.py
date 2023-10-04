@@ -3,30 +3,12 @@ import pandas as pd
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import Normalizer
 from sklearn import metrics
 import warnings
 warnings.filterwarnings("ignore")
-
-def fit_predict_eval(model, features_train, features_test, target_train, target_test):
-    # here you fit the model
-    model = model.fit(features_train, target_train)
-    target_pred = model.predict(features_test)
-    score = metrics.accuracy_score(target_test, target_pred).round(4)
-    print(f'Model: {model}\nAccuracy: {round(score,3)}\n')
-    return(score)
-
-def fit_predict_eval_silent(model, features_train, features_test, target_train, target_test):
-    # here you fit the model
-    model = model.fit(features_train, target_train)
-    target_pred = model.predict(features_test)
-    score = metrics.accuracy_score(target_test, target_pred).round(4)
-    #print(f'Model: {model}\nAccuracy: {score}\n')
-    return(score)
 
 #train_ds = tf.keras.datasets.mnist.load_data(path="mnist.npz")
 (x, y), (_, _) = tf.keras.datasets.mnist.load_data()
