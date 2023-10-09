@@ -67,6 +67,8 @@ class OneLayerNeural:
     def __init__(self, n_features, n_classes):
         self.W = xavier(n_features, n_classes)
         self.b = xavier(1, n_classes)
+        self.acc = None
+        self.loss = None
 
     def forward(self, X):
         return sigmoid(np.dot(X, self.W) + self.b)
@@ -81,7 +83,6 @@ class OneLayerNeural:
         self.W -= alpha * delta_W
         self.b -= alpha * delta_b
 
-
 def train(model, X, y, alpha, batch_size=100):
     n = X.shape[0]
     for i in range(0, n, batch_size):
@@ -91,7 +92,8 @@ def train(model, X, y, alpha, batch_size=100):
 def accuracy(model, X, y):
     y_pred = np.argmax(model.forward(X), axis=1)
     y_true = np.argmax(y, axis=1)
-    return np.mean(y_pred == y_true)
+    model.loss = np.mean((y_pred - y_true) ** 2)
+    model.acc = np.mean(y_pred == y_true)
 
 
 
@@ -151,10 +153,16 @@ if __name__ == '__main__':
     #print("{} {} {} {}".format(res7, res8, res9, res10))
 
     ## Stage 4
-    r1 = accuracy(NN, X_test, y_test).flatten().tolist()
-    r2 = []
+    accuracy(NN, X_test, y_test)
+    r1 = NN.acc.flatten().tolist()
+    acc = []
+    loss = []
     for _ in range(20):
-        train(NN, X_train, y_train, 0.5)
-        r2.append(accuracy(NN, X_test, y_test))
+        train(NN, X_train, y_train, alpha=0.5)
+        accuracy(NN, X_test, y_test)
+        acc.append(NN.acc)
+        loss.append(NN.loss)
 
-    print("{} {}".format(r1, r2))
+    print("{} {}".format(r1, acc))
+
+    plot(loss, acc)
