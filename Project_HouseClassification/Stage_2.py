@@ -20,18 +20,9 @@ if __name__ == '__main__':
     # write your code here
     houses = pd.read_csv('../Data/house_class.csv')
 
-    ## Stage 1
-    #print(houses.head(5))
-    #print(houses.shape[0])
-    #print(houses.shape[1])
-    #print(houses.isnull().values.any())
-    #print(houses.loc[:,['Room']].max().item())
-    #print(round(houses.loc[:, ['Area']].mean().item(),1))
-    #print(houses.loc[:, ['Zip_loc']].nunique().item())
-
     ## Stage 2
     X = houses.loc[:, ['Area','Room','Lon','Lat','Zip_area','Zip_loc']]
-    y = houses.loc[:, ['Area','Room','Lon','Lat','Zip_area','Zip_loc']]
+    y = houses.loc[:, ['Price']]
 
     X_train, X_test, y_train, y_test = \
         train_test_split(X.values, y.values,
