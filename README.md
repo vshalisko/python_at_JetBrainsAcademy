@@ -16,3 +16,6 @@ Chronological order of completion
 12) Nobel laureates
 13) Logistic regression from scratch
 14) Random forest from scartch
+15) Neural network from scratch
+16) Classification of handwritten digits
+17) House classification
