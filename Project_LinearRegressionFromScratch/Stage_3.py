@@ -12,6 +12,8 @@ class CustomLinearRegression:
         self.rmse = []
 
     def fit(self, X, y):
+        if self.fit_intercept:
+            X = np.column_stack((np.ones(len(X)), X))
         Xt = np.transpose(X)
         a = np.dot(Xt, y)
         b = np.dot(Xt, X)
@@ -25,6 +27,8 @@ class CustomLinearRegression:
             self.coefficient = solution
 
     def predict(self, X):
+        if self.fit_intercept:
+            X = np.column_stack((np.ones(len(X)), X))
         return np.dot(X, self.solution)
 
     def r2_score(self, y, yhat):
@@ -49,13 +53,13 @@ cost_per_ton = [21.95, 27.18, 16.9, 15.37, 16.03, 18.15, 14.22, 18.72, 15.4, 14.
 
 y = cost_per_ton
 
-X = np.array([np.ones(len(y)),capacity, age]).T
+X = np.array([capacity, age]).T
 y = np.array(y)
 
 lr = CustomLinearRegression(fit_intercept=True)
-lr.fit(X[:,:], y)
+lr.fit(X, y)
 
-yhat = lr.predict(X[:,:])
+yhat = lr.predict(X)
 #print(yhat)
 
 lr.rmse_score(y, yhat)
