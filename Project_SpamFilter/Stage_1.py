@@ -2,6 +2,7 @@ import pandas as pd
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
+import re
 
 def replace_digits_with_aanumbers(text):
     pattern = r'\b(?:\d+\w*|\w*\d+\w*)\b'
