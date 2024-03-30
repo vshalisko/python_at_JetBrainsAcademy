@@ -11,7 +11,10 @@ from scipy.stats import f_oneway
 ## so we need to check only the last two conditions
 ## to perform the ANOVA test after.
 ## Conduct the Shapiro-Wilk Normality test for the IGL 
-## mean surface brightness (the mean_mu column) in galaxies with LSB features and without them. This step checks the second condition of the ANOVA test: each sample came from a normally distributed population. Is the condition satisfied?
+## mean surface brightness (the mean_mu column) in galaxies with LSB 
+## features and without them. This step checks the second condition of the ANOVA 
+## test: each sample came from a normally distributed population. 
+## Is the condition satisfied?
 ## Perform the Fligner-Killeen Homogeneity test for 
 ## variances of the same two data samples. This step checks the 
 ## third condition: the samples came from populations with 
