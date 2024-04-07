@@ -1,3 +1,6 @@
+## Note: some code inspired by review of Cata77 GitHub user example: 
+## https://github.com/Cata77/Spam-Filter/blob/main/spam-filter.py
+
 import pandas as pd
 import spacy
 import re
