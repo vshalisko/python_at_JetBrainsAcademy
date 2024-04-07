@@ -34,13 +34,13 @@ def calculate_confusion_matrix(df):
     FN = 0
     for i in df.index:
         if df.at[i, 'Predicted'] == 'spam' and df.at[i, 'Actual'] == 'spam':
-            TN += 1
-        elif df.at[i, 'Predicted'] == 'ham' and df.at[i, 'Actual'] == 'ham':
             TP += 1
+        elif df.at[i, 'Predicted'] == 'ham' and df.at[i, 'Actual'] == 'ham':
+            TN += 1
         elif df.at[i, 'Predicted'] == 'spam' and df.at[i, 'Actual'] == 'ham':
-            FN += 1
-        elif df.at[i, 'Predicted'] == 'ham' and df.at[i, 'Actual'] == 'spam':
             FP += 1
+        elif df.at[i, 'Predicted'] == 'ham' and df.at[i, 'Actual'] == 'spam':
+            FN += 1
 
     accuracy = (TP + TN) / (TP + TN + FP + FN)
     recall = TP / (TP + FN)
