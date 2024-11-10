@@ -21,3 +21,7 @@ Chronological order of completion
 17) House classification
 18) Linear regression from scratch
 19) Decision tree from scratch
+20) Local Galaxy Groups
+21) NBA data processing
+22) Spam filter
+23) Arithmetic exam application
