@@ -11,7 +11,7 @@ Chronological order of completion
 7) Honest calculator
 8) Read quality control (Bioinformatics)
 9) Generate randomness
-10) Salary prediction
+10) Salary prediction (sklearn LinearRegression)
 11) Data analysis for hospitals
 12) Nobel laureates
 13) Logistic regression from scratch (sklearn LogisticRegression, StandardScaler)
