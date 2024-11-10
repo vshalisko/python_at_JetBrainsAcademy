@@ -23,5 +23,7 @@ Chronological order of completion
 19) Decision tree from scratch
 20) Local Galaxy Groups
 21) NBA data processing
-22) Spam filter
-23) Arithmetic exam application
+22) Salary prediction
+23) Data analysis for hospital
+24) Spam filter
+25) Arithmetic exam application
