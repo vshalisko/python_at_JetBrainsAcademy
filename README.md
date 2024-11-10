@@ -17,7 +17,7 @@ Chronological order of completion
 13) Logistic regression from scratch
 14) Random forest from scartch
 15) Neural network from scratch
-16) Classification of handwritten digits
+16) Classification of handwritten digits (ANN)
 17) House classification
 18) Linear regression from scratch
 19) Decision tree from scratch
