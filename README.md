@@ -24,8 +24,7 @@ Chronological order of completion
 20) House classification (sklearn DecisionTreeClassifier, OneHotEncoder, OrdinalEncoder, TargetEncoder)
 21) Local Galaxy Groups (astropy)
 22) NBA data processing
-23) Salary prediction
-24) Data analysis for hospital
-25) Spam filter (sklearn.feature_extraction CountVectorizer, klearn.naive_bayes MultinomialNB)
-26) Arithmetic exam application
-27) A/B test for Delivery app (statistical hypothesis testing in scipy)
+23) Data analysis for hospital
+24) Spam filter (sklearn.feature_extraction CountVectorizer, klearn.naive_bayes MultinomialNB)
+25) Arithmetic exam application
+26) A/B test for Delivery app (statistical hypothesis testing in scipy)
