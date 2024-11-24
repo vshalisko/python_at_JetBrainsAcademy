@@ -1,3 +1,6 @@
+import pickle
+import os
+
 class Card:
 
     def __init__(self, card, definition):
@@ -14,7 +17,6 @@ class Flashcards:
 
     def init_test_number(self):
         self.test_number = int(input('How many times to ask?\n'))
-
 
     def add_card(self, card):
         self.cards.append(card)
@@ -86,7 +88,6 @@ class Flashcards:
         self.add_card(Card(card, definition))
         print('The pair ("{}":"{}") has been added.'.format(card, definition))
 
-
     def examen_card(self, card):
         print('Print the definition of "{}":'.format(card.card))
         answer = str(input())
@@ -111,6 +112,38 @@ class Flashcards:
         else:
             print('Can\'t remove "{}": there is no such card.'.format(card_to_remove))
 
+    def replace_card(self, card_to_replace, description):
+        if self.check_card(card_to_replace):
+            for i in range(0,len(self.cards)):
+                if self.cards[i].card == card_to_replace:
+                    self.cards[i].description = description
+                    break
+        else:
+            print('Can\'t remove "{}": there is no such card.'.format(card_to_replace))
+
+    def save_pickle(self):
+        file_name = str(input('File name:\n'))
+        pickle_dict = {}
+        for one_card in self.cards:
+            pickle_dict[one_card.card] = one_card.definition
+        with open(file_name, 'wb') as f:
+            pickle.dump(pickle_dict, f)
+        print('{} cards have been saved.'.format(len(self.cards)))
+
+    def load_pickle(self):
+        file_name = str(input('File name:\n'))
+        if os.path.exists(file_name):
+            with open(file_name, 'rb') as f:
+                cards_to_parse = pickle.load(f)
+            for new_card, new_desc in cards_to_parse.items():
+                if self.check_card(new_card):
+                    self.replace_card(new_card, new_desc)
+                else:
+                    self.add_card(Card(new_card, new_desc))
+            print('{} cards have been loaded.'.format(len(cards_to_parse.keys())))
+        else:
+            print('File not found.')
+
 def main():
 
     flashcards = Flashcards()
@@ -126,18 +159,17 @@ def main():
             flashcards.request_single_card()
         elif menu == 'ask':
             flashcards.init_test_number()
-            #for test_card in flashcards.cards:
+            stack = flashcards.cards
             for i in range(0,flashcards.test_number):
-                test_card = flashcards.cards[i]
+                test_card = stack.pop()
+                stack.insert(0,test_card)
                 flashcards.examen_card(test_card)
         elif menu == 'remove':
             flashcards.remove_card()
         elif menu == 'import':
-            file_name = str(input('File name:\n'))
-            pass
+            flashcards.load_pickle()
         elif menu == 'export':
-            file_name = str(input('File name:\n'))
-            pass
+            flashcards.save_pickle()
 
 
 if __name__ == "__main__":
