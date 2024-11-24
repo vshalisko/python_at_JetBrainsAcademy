@@ -27,4 +27,5 @@ Chronological order of completion
 23) Data analysis for hospital
 24) Spam filter (sklearn.feature_extraction CountVectorizer, klearn.naive_bayes MultinomialNB)
 25) Arithmetic exam application
-26) A/B test for Delivery app (statistical hypothesis testing in scipy)
+26) A/B test for Delivery app (statistical hypothesis testing in scipy), incomplete
+27) Flashcards (OOP)
