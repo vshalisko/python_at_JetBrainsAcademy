@@ -1,69 +1,131 @@
 import numpy as np
 
+class Image:
+
+    def __init__(self, letter, x=0, y=0):
+        self.letters_dict = {
+            "O": [[5, 6, 9, 10], [5, 6, 9, 10], [5, 6, 9, 10], [5, 6, 9, 10]],
+            "I": [[1, 5, 9, 13], [4, 5, 6, 7], [1, 5, 9, 13], [4, 5, 6, 7]],
+            "S": [[6, 5, 9, 8], [5, 9, 10, 14], [6, 5, 9, 8], [5, 9, 10, 14]],
+            "Z": [[4, 5, 9, 10], [2, 5, 6, 9], [4, 5, 9, 10], [2, 5, 6, 9]],
+            "L": [[1, 5, 9, 10], [5, 9, 10, 11], [1, 2, 6, 10], [4, 5, 6, 8]],
+            "J": [[2, 6, 9, 10], [4, 5, 6, 10], [1, 2, 5, 9], [0, 4, 5, 6]],
+            "T": [[1, 4, 5, 6], [1, 4, 5, 9], [4, 5, 6, 9], [1, 5, 6, 9]]
+        }
+        self.letter = letter
+        self.rotation = 0
+        self.x = x
+        self.y = y
+
+    def rotate(self):
+        if self.rotation >= len(self.letters_dict[self.letter]):
+            self.rotation = 0
+        else:
+            self.rotation += 1
+
+    def image(self):
+        return self.letters_dict[self.letter][self.rotation]
+
+
 class TetrisGame:
 
     def __init__(self, height=20, width=10):
-        self.letters_dict = {
-            "O": [[4, 14, 15, 5], [4, 14, 15, 5], [4, 14, 15, 5], [4, 14, 15, 5]],
-            "I": [[4, 14, 24, 34], [3, 4, 5, 6], [4, 14, 24, 34], [3, 4, 5, 6]],
-            "S": [[5, 4, 14, 13], [4, 14, 15, 25], [5, 4, 14, 13], [4, 14, 15, 25]],
-            "Z": [[4, 5, 15, 16], [5, 15, 14, 24], [4, 5, 15, 16], [5, 15, 14, 24]],
-            "L": [[4, 14, 24, 25], [5, 15, 14, 13], [4, 5, 15, 25], [6, 5, 4, 14]],
-            "J": [[5, 15, 25, 24], [15, 5, 4, 3], [5, 4, 14, 24], [4, 14, 15, 16]],
-            "T": [[4, 14, 24, 15], [4, 13, 14, 15], [5, 15, 25, 14], [4, 5, 6, 15]]
-        }
+
         self.height = height
         self.width = width
         self.empty_grid()
 
     def empty_grid(self):
-        pregrid = np.repeat(['-'], self.height * self.width)
-        self.grid = pregrid.reshape(self.height, self.width)
+        self.grid = self.return_empty_grid()
 
-    def put_letter_in_grid(self, letter, rotation):
-        for i in range(len(self.letters_dict[letter][rotation])):
-            x = int(self.letters_dict[letter][rotation][i] % self.width)
-            y = int(self.letters_dict[letter][rotation][i] // self.width)
-            self.grid[y, x] = "0"
+    def return_empty_grid(self):
+        pregrid = np.repeat(["-"], self.height * self.width)
+        return pregrid.reshape(self.height, self.width)
+
+    def put_letter_in_grid(self, image_obj):
+        image_seq = image_obj.image()
+        for i in range(len(image_seq)):
+
+            x = int(image_seq[i] % 4)
+            y = int(image_seq[i] // 4)
+            #x = int(image_seq[i] % self.width)
+            #y = int(image_seq[i] // self.width)
+            x_r = x + image_obj.x
+            y_r = y + image_obj.y
+
+            if y_r < 0 or y_r >= self.height or x_r < 0 or x_r >= self.width:
+                pass
+            else:
+                self.grid[y_r, x_r] = "0"
 
     def print_grid(self):
-        for i in range(self.height):
+        for y in range(self.height):
             line = ""
-            for j in range(self.width):
-                line += self.grid[i, j]
+            for x in range(self.width):
+                line += self.grid[y, x] + " "
             print(line)
 
-    def show_rotations(self, letter):
+    def go_rotate(self, image_obj):
+        if image_obj.y > 0:
+            image_obj.y += 1
+        image_obj.rotate()
 
+    def go_down(self, image_obj):
+        image_obj.y += 1
+
+    def go_left(self, image_obj):
+        image_obj.y += 1
+        image_obj.x += -1
+
+    def go_right(self, image_obj):
+        image_obj.y += 1
+        image_obj.x += 1
+
+    def show_grid(self, image_obj):
         ## empty grid
         self.empty_grid()
         self.print_grid()
         print()
 
-        ## all grids in list
-        for r in range(len(self.letters_dict[letter])):
-            self.empty_grid()
-            self.put_letter_in_grid(letter, r)
-            self.print_grid()
-            print()
-
-        ## last grid as the first in list
+    def show_letter(self, image_obj):
+        ## last down moved grid as the first in list
+        print()
         self.empty_grid()
-        self.put_letter_in_grid(letter, 0)
+        self.put_letter_in_grid(image_obj)
         self.print_grid()
-        print(self.grid)
+        print()
 
-        return
 
 
 def main():
 
     letter = str(input())
-    if letter == "exit":
-        exit()
-    else:
-        t1 = TetrisGame(5, 10)
-        t1.show_rotations(letter)
+    w, h = str(input()).split()
+    print()
+
+    image = Image(letter, 3, 0)
+    t1 = TetrisGame(int(h), int(w))
+
+    t1.show_grid(image)
+    t1.show_letter(image)
+
+    while True:
+        command = str(input())
+        if command == "rotate":
+            t1.go_rotate(image)
+            t1.show_letter(image)
+        elif command == "right":
+            t1.go_right(image)
+            t1.show_letter(image)
+        elif command == "left":
+            t1.go_left(image)
+            t1.show_letter(image)
+        elif command == "down":
+            t1.go_down(image)
+            t1.show_letter(image)
+        elif command == "exit":
+            break
+    exit()
 
 
 if __name__ == "__main__":
