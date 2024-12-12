@@ -3,9 +3,10 @@ import numpy as np
 class Image:
 
     def __init__(self, letter, x=0, y=0):
+
         self.letters_dict = {
             "O": [[5, 6, 9, 10], [5, 6, 9, 10], [5, 6, 9, 10], [5, 6, 9, 10]],
-            "I": [[1, 5, 9, 13], [4, 5, 6, 7], [1, 5, 9, 13], [4, 5, 6, 7]],
+            "I": [[1, 5, 9, 13], [0, 1, 2, 3], [1, 5, 9, 13], [0, 1, 2, 3]],
             "S": [[6, 5, 9, 8], [5, 9, 10, 14], [6, 5, 9, 8], [5, 9, 10, 14]],
             "Z": [[4, 5, 9, 10], [2, 5, 6, 9], [4, 5, 9, 10], [2, 5, 6, 9]],
             "L": [[1, 5, 9, 10], [5, 9, 10, 11], [1, 2, 6, 10], [4, 5, 6, 8]],
@@ -66,9 +67,8 @@ class TetrisGame:
             print(line)
 
     def go_rotate(self, image_obj):
-        if image_obj.y > 0:
-            image_obj.y += 1
         image_obj.rotate()
+        image_obj.y += 1
 
     def go_down(self, image_obj):
         image_obj.y += 1
