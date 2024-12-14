@@ -160,3 +160,32 @@ def main():
     letter = str(input())
     w, h = str(input()).split()
     print()
+
+
+    image = Image(letter, 3, 0)
+    t1 = TetrisGame(int(h), int(w))
+
+    t1.show_grid(image)
+    t1.show_letter(image)
+
+    while True:
+        command = str(input())
+        if command == "rotate":
+            t1.go_rotate(image)
+            t1.show_letter(image)
+        elif command == "right":
+            t1.go_right(image)
+            t1.show_letter(image)
+        elif command == "left":
+            t1.go_left(image)
+            t1.show_letter(image)
+        elif command == "down":
+            t1.go_down(image)
+            t1.show_letter(image)
+        elif command == "exit":
+            break
+    exit()
+
+
+if __name__ == "__main__":
+    main()
