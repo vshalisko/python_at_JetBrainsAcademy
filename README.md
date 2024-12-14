@@ -29,3 +29,4 @@ Chronological order of completion
 25) Arithmetic exam application
 26) A/B test for Delivery app (statistical hypothesis testing in scipy), incomplete
 27) Flashcards (OOP)
+28) Tetris (OOP)
