@@ -19,30 +19,37 @@ class RegexEngine:
         return r == s
 
     def recursive(self, r, s):
-        if len(r) == 0 and not self.end:
-            return True
-        if len(r) == 0 and len(s) == 0 and self.end:
-            return True
-        if len(r) == 0 and len(s) > 0 and self.end:
-            return False
-        elif len(r) > 0 and len(s) == 0 and self.end:
-            return False
-        elif len(r) > 0 and len(s) == 0 and not self.end:
-            return True
-        elif len(r) > 0 and len(s) > 0 and not self.period(r[0], s[0]):
-            return False
-        elif len(r) > 0:
-            return self.recursive(r[1:], s[1:])
+
+        if len(r) == 0:
+            if self.end:
+                if len(s) == 0:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        else:
+            if len(s) == 0:
+                if self.end:
+                    return False
+                else:
+                    return True
+            else:
+                if self.period(r[0], s[0]):
+                    return self.recursive(r[1:], s[1:])
+                else:
+                    return False
 
     def sequential(self):
         result = False
-        if self.r == '':
+        if not self.r:
             result = True
         if self.start:
             if self.recursive(self.r, self.s):
                 result = True
         else:
             for i in range(len(self.s)):
+                #print("Here", str(i))
                 if self.recursive(self.r, self.s[i:]):
                     result = True
                     break
