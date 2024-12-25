@@ -18,7 +18,7 @@ Chronological order of completion
 14) Random forest from scartch
 15) Neural network from scratch
 16) Classification of handwritten digits (ANN with TensorFlow)
-17) House classification
+17) House classification (sklearn DecisionTrees)
 18) Linear regression from scratch (sklearn LinearRegression)
 19) Decision tree from scratch (manual decision tree and sklearn.metrics)
 20) House classification (sklearn DecisionTreeClassifier, OneHotEncoder, OrdinalEncoder, TargetEncoder)
