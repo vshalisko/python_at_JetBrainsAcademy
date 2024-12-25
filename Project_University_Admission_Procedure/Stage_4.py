@@ -24,37 +24,32 @@ def remove_item(list_to_process, to_remove):
 #print(len(applicant_db))
 
 applicants_by_dep = {}
-for dep in deps:
-    filtered_applicants = list(filter(lambda x: x[2] == dep, applicant_db))
+
+def update_dep_selection(department, selected, priority, limit):
+    filtered_applicants = list(filter(lambda x: x[priority] == department, applicant_db))
     sorted_applicants = sorted(filtered_applicants, key=lambda x: (-x[1], x[0]))
-    applicants_selection = []
-    for i in range(M):
+    applicants_selection = selected
+    for i in range(limit - len(selected)):
         if len(sorted_applicants) > 0:
             applicants_selection.append(sorted_applicants.pop(0))
             remove_item(applicant_db, applicants_selection[-1][0])
-    applicants_by_dep[dep] = applicants_selection
-
-#print(len(applicant_db))
+    return applicants_selection
 
 for dep in deps:
-    filtered_applicants = list(filter(lambda x: x[3] == dep, applicant_db))
-    sorted_applicants = sorted(filtered_applicants, key=lambda x: (-x[1], x[0]))
-    applicants_selection = applicants_by_dep[dep]
-    for i in range(M - len(applicants_selection)):
-        if len(sorted_applicants) > 0:
-            applicants_selection.append(sorted_applicants.pop(0))
-            remove_item(applicant_db, applicants_selection[-1][0])
-    applicants_by_dep[dep] = applicants_selection
+    applicants_by_dep[dep] = []
+    applicants_by_dep[dep] = update_dep_selection(dep,
+                                                  applicants_by_dep[dep],
+                                                  2, M)
 
 for dep in deps:
-    filtered_applicants = list(filter(lambda x: x[4] == dep, applicant_db))
-    sorted_applicants = sorted(filtered_applicants, key=lambda x: (-x[1], x[0]))
-    applicants_selection = applicants_by_dep[dep]
-    for i in range(M - len(applicants_selection)):
-        if len(sorted_applicants) > 0:
-            applicants_selection.append(sorted_applicants.pop(0))
-            remove_item(applicant_db, applicants_selection[-1][0])
-    applicants_by_dep[dep] = applicants_selection
+    applicants_by_dep[dep] = update_dep_selection(dep,
+                                                  applicants_by_dep[dep],
+                                                  3, M)
+
+for dep in deps:
+    applicants_by_dep[dep] = update_dep_selection(dep,
+                                                  applicants_by_dep[dep],
+                                                  4, M)
 
 for dep in deps:
     print(dep)
