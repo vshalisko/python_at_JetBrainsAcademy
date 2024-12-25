@@ -26,9 +26,10 @@ Chronological order of completion
 22) NBA data processing
 23) Data analysis for hospital
 24) Spam filter (sklearn.feature_extraction CountVectorizer, klearn.naive_bayes MultinomialNB)
-25) Arithmetic exam application
-26) A/B test for Delivery app (statistical hypothesis testing in scipy), incomplete
-27) Flashcards (OOP)
-28) Tetris (OOP)
-29) Traffic light (OOP, stage 6 to be rewritten)
-30) Regexp engine (OOP, recursion)
+26) Arithmetic exam application
+27) A/B test for Delivery app (statistical hypothesis testing in scipy), incomplete
+28) Flashcards (OOP)
+29) Tetris (OOP)
+30) Traffic light (OOP, stage 6 to be rewritten)
+31) Regexp engine (OOP, recursion)
+32) University admission procedure (sorting)
