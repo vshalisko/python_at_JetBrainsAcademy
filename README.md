@@ -33,3 +33,4 @@ Chronological order of completion
 30) Traffic light (OOP, stage 6 to be rewritten)
 31) Regexp engine (OOP, recursion)
 32) University admission procedure (sorting)
+33) Text generator (tokenization, Markov chains, NLP)
