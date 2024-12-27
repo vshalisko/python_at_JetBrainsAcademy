@@ -1,4 +1,5 @@
 from nltk.tokenize import WhitespaceTokenizer
+from nltk import ngrams
 
 filename = str(input())
 f = open(filename, "r", encoding="utf-8")
@@ -10,7 +11,9 @@ wst = WhitespaceTokenizer()
 corpus = wst.tokenize(text)
 unique = list(dict.fromkeys(corpus))
 
-bigrams = tuple(zip(corpus, corpus[1:]))
+n = 2
+#bigrams = tuple(zip(corpus, corpus[1:]))
+bigrams = tuple(ngrams(corpus, n))
 
 n_token = len(corpus)
 n_unique = len(unique)
@@ -33,7 +36,4 @@ while True:
             print("Head:", bigrams[val][0], "\tTail:", bigrams[val][1])
         except ValueError:
             print("Type Error. Please input an integer.")
-            continue
-        except IndexError:
-            print("Index Error. Please input an integer that is in the range of the corpus.")
             continue
