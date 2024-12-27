@@ -1,3 +1,6 @@
+## The programm in its current form ocasionally get into infinite loop if no trigram 
+## has a proper punktuation mark
+
 import random
 from nltk.tokenize import WhitespaceTokenizer
 from nltk import ngrams
