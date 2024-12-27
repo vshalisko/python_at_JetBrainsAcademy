@@ -45,7 +45,7 @@ def initial_chain(head):
     return word
 
 def first_word():
-    word = chain_word(head)
+    word = random.choice(corpus)
     while True:
         if word[-1] in ['-', '.', '?', '!']\
                 or word[0] != word[0].upper():
