@@ -1,6 +1,3 @@
-## The programm in its current form ocasionally get into infinite loop if no trigram 
-## has a proper punktuation mark
-
 import random
 from nltk.tokenize import WhitespaceTokenizer
 from nltk import ngrams
@@ -46,22 +43,23 @@ def chain_word(head, dictionary):
     return random_tail[0]
 
 def final_word(head):
-    return chain_word(head, trigram_dict)
+    word = chain_word(head, trigram_dict)
+    return word
 
 def initial_chain(head):
     word = chain_word(head, trigram_dict)
-    while True:
-        if word[-1] in ['.', '?', '!']:
-            word = chain_word(head, trigram_dict)
-        else:
-            break
+    #while True:
+    #    if word[-1] in ['.', '?', '!']:
+    #        word = chain_word(head, trigram_dict)
+    #    else:
+    #        break
     return word
 
 def first_word():
     trigram = random.choice(trigrams)
     while True:
         (head1, head2, tail) = trigram
-        if head1[-1] in ['-', '.', '?', '!']\
+        if head1[-1] in ['-', '.', '?', '!', '"']\   # There may be some more unwanted symbols
                 or head1[0] != head1[0].upper():
             trigram = random.choice(trigrams)
         else:
@@ -76,7 +74,9 @@ for i in range(10):
     for _ in range(2):
         phrase_list.append(initial_chain(phrase_list[-2] + ' ' + phrase_list[-1]))
     end_mark = False
-    while not end_mark:
+    reset_counter = 0
+    while not end_mark and reset_counter <= 50:        # reset counter is to prevent loop stuck if there are no end mark found
+        reset_counter += 1
         phrase_list.append(final_word(phrase_list[-2] + ' ' + phrase_list[-1]))
         if phrase_list[-1][-1] in ['.', '?', '!']:
             end_mark = True
