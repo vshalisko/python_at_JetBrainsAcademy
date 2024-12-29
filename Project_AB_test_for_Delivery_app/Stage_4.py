@@ -135,8 +135,8 @@ elif stage == 4:
     data_filtered = data.loc[data['order_value'] <= order_value_p99[0],:]
     data_filtered = data_filtered.loc[data_filtered['session_duration'] <= session_duration_p99[0], :]
 
-    sample_1 = data_filtered.loc[data_filtered['group'] == "Control","session_duration"]
-    sample_2 = data_filtered.loc[data_filtered['group'] == "Experimental","session_duration"]
+    sample_1 = data_filtered.loc[data_filtered['group'] == "Control","order_value"]
+    sample_2 = data_filtered.loc[data_filtered['group'] == "Experimental","order_value"]
 
 
     test_res = stats.mannwhitneyu(sample_1, sample_2)
@@ -154,4 +154,4 @@ elif stage == 4:
     print("U1 = {0:5.3f}, p-value {1} 0.05".format(
         round(test_res[0],3),test_p))
     print("Reject null hypothesis: {}".format(test_reject))
-    print("Means are equal: {}".format(test_equal))
+    print("Distributions are same: {}".format(test_equal))
