@@ -2,11 +2,9 @@ from lxml import etree
 import string
 import nltk
 from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 xml_file = 'news.xml'
 root = etree.parse(xml_file).getroot()
-vectorizer = TfidfVectorizer(input='content', lowercase=True, ngram_range=(1,1), min_df=0.1, max_df=0.6)
 
 #etree.dump(root)
 
