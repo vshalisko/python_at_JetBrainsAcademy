@@ -33,8 +33,6 @@ for news in root[0]:
             pass
         elif len(word) < 2:
             pass
-        #elif nltk.pos_tag([word])[0][1] != 'NN':
-        #    pass
         else:
             edited_text.append(word)
 
