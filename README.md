@@ -34,3 +34,4 @@ Chronological order of completion
 31) Regexp engine (OOP, recursion)
 32) University admission procedure (sorting)
 33) Text generator (tokenization, Markov chains, NLP)
+34) Key terms extraction (tokenization, lemmatiation, vectorization, NLP)
