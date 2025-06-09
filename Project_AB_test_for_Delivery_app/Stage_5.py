@@ -175,9 +175,8 @@ elif stage == 5:
     plt.legend()
     plt.show()
 
-    sample_1 = data_filtered.loc[data_filtered['group'] == 'Control','order_value']
-    sample_2 = data_filtered.loc[data_filtered['group'] == 'Experimental','order_value']
-
+    sample_1 = data_filtered.loc[data_filtered['group'] == 'Control','log_order_value']
+    sample_2 = data_filtered.loc[data_filtered['group'] == 'Experimental','log_order_value']
 
     levene_res = stats.levene(sample_1, sample_2)
 
