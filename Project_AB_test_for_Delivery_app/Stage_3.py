@@ -93,6 +93,21 @@ elif stage == 3:
     plt.ylabel('Number of sessions')
     plt.show()
 
+
+    ## barplot (this code allowed to pass the test, but sill not return the plot like in example)
+    data_grouped = data.groupby(by='date', group_keys=True).group.value_counts().unstack()
+    data_grouped = data_grouped.reset_index()
+    data_grouped['day'] = [datetime.datetime.strptime(predate, '%Y-%m-%d').strftime('%d') for predate in data_grouped['date']]
+    myx = data_grouped[['day']].to_numpy().flatten()
+    myy1 = data_grouped[['Control']].astype('int').to_numpy().flatten()
+    myy2 = data_grouped[['Experimental']].astype('int').to_numpy().flatten()
+    fig, axs = plt.subplots(1,2)
+    axs[0].bar(myx, myy1)
+    axs[1].bar(myx, myy2)
+    axs[0].set_title('Control')
+    axs[1].set_title('Experimental')
+    plt.show()
+    
     ## histograms
     data_control = data.loc[data['group'] == "Control",:]
     data_experimental = data.loc[data['group'] == "Experimental", :]
