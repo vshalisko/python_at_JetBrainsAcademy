@@ -29,9 +29,12 @@ Chronological order of completion
 26) Arithmetic exam application
 27) A/B test for Delivery app (statistical hypothesis testing in scipy, mathplotlib)
 28) Flashcards (OOP)
-29) Tetris (OOP)
-30) Traffic light (OOP, stage 6 to be rewritten)
-31) Regexp engine (OOP, recursion)
-32) University admission procedure (sorting)
-33) Text generator (tokenization, Markov chains, NLP)
-34) Key terms extraction (tokenization, lemmatiation, vectorization, NLP)
+29) Jeopardy - Question answering Bot (NLTK)
+30) Tetris (OOP)
+31) Traffic light (OOP, stage 6 to be rewritten)
+32) Regexp engine (OOP, recursion)
+33) University admission procedure (sorting)
+34) Text generator (tokenization, Markov chains, NLP)
+35) Key terms extraction (tokenization, lemmatiation, vectorization, NLP)
+36) Easy Bus Ruder Company (JSON data verification, over type and content errors) - pjoject with all code created in Colab with Gemini AI, as a test case for AI code generation with only minor editing (less then 5%)
+37) Web Scrapper
