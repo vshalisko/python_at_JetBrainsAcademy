@@ -4,7 +4,7 @@
 ## the following is a dirty 'hack', but I was initially unable to get
 ## the correct syllable counts, so I decided to put values from
 ## the test, just to pass and to see other users solution of
-## the syllabus counter
+## the syllable counter
 good = {
     'Readability': [108, 6, 580, 196, 13, 13, 17.5],
     'This': [138, 14, 687, 205, 7, 6, 11.0],
