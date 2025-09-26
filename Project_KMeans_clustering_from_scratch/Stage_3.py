@@ -68,9 +68,9 @@ class CustomKMeans:
 
     def find_nearest_center(self, X):
         distances = np.zeros((X.shape[0], self.centers.shape[0]))
-        for i in range(0, X.shape[0]):
-            for j in range(0, self.centers.shape[0]):
-                distances[i,j] = self.euclidean(X[i,],X[j,])
+        for i in range(X.shape[0]):
+            for j in range(self.centers.shape[0]):
+                distances[i,j] = self.euclidean(X[i,],self.centers[j,])
         return np.argmin(distances, axis=1)
 
     def calculate_new_centers(self, X, labels):
