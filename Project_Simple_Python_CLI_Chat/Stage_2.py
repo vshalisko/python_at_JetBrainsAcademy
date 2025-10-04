@@ -18,12 +18,12 @@ def get_chat_completion(messages):
         temperature=0.7  # A non-zero temperature for randomness
     )
 
-MODEL_35_TURBO = "gpt-3.5-turbo"
-MODEL_4_TURBO = "gpt-4-turbo-preview"
+MODEL_35_TURBO = "gpt-3.5-turbo-0125"
+MODEL_4_TURBO = "gpt-4-turbo-2024-04-09"
 
 MODELS = {
-    MODEL_35_TURBO: {"input_cost": 0.0005 / 1000, "output_cost": 0.0015 / 1000},
-    MODEL_4_TURBO: {"input_cost": 0.01 / 1000, "output_cost": 0.03 / 1000},
+    MODEL_35_TURBO: {"input_cost": 0.5 / 1000000, "output_cost": 1.5 / 1000000},
+    MODEL_4_TURBO: {"input_cost": 10.0 / 1000000, "output_cost": 30.0 / 1000000},
 }
 
 def calculate_tokens_cost(model, chat_completion):
