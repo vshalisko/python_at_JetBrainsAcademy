@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+## This scripts uses OpenRouter API, the OpenAI API is for compartibility
 api_key_old = os.environ.get("OPENAI_API_KEY", None)
 api_key = os.environ.get("OPENROUTER_API_KEY", None)
 
@@ -17,6 +18,7 @@ MODELS = {
     MODEL_4_TURBO: {"input_cost": 10.0 / 1000000, "output_cost": 30.0 / 1000000},
 }
 
+## The only function we have is to finish the loop
 functions_list = [
     {
         "type": "function",
@@ -32,9 +34,11 @@ functions_list = [
     }
 ]
 
+## Start client with OpenRouter API
 client = OpenAI(api_key=api_key,
                 base_url="https://openrouter.ai/api/v1")
 
+## Main function to request the answer, including the functions choice
 def get_chat_completion(messages, tools=None, tool_choice="auto"):
     return client.chat.completions.create(
         model="gpt-3.5-turbo",
@@ -55,6 +59,7 @@ def calculate_tokens_cost(model, chat_completion):
     )
     return input_tokens_cost + output_tokens_cost
 
+## The function to end the loop returns False to be assigned to variable that controls while loop
 def end_conversation():
     return False
 
@@ -68,6 +73,7 @@ while conversation_ok:
 
     prompt = input("Enter a message: ")
 
+    ## Important not to forget here to give an instruction when to call a function
     messages = [    {
         "role": "system",
         "content": "Call a funcion only when user ask to end conversation.",
