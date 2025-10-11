@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Python Quiz API</title>
+</head>
+<body>
+  <header>
+    <h1>Python Quiz API - Frontend</h1>
+  </header>
+  <main>
+    <section id="welcome-section">
+      <h2>Welcome Message</h2>
+      <button id="fetch-welcome-btn">Fetch Welcome Message</button>
+      <p id="welcome-message"></p>
+    </section>
+
+    <hr>
+
+    <section id="quiz-section">
+      <h2>Quiz Time!</h2>
+      <button id="get-question-btn">Get a Random Question</button>
+      <div id="question-container" style="display: none;">
+        <h3 id="question-title"></h3>
+        <ul id="options-list"></ul>
+        <button id="submit-answer-btn">Submit Answer</button>
+        <p id="feedback"></p>
+      </div>
+    </section>
+
+    <hr>
+
+    <section id="docs-section">
+      <h2>API Documentation</h2>
+      <button id="fetch-docs-btn">View Documentation</button>
+      <pre id="docs-content"></pre>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

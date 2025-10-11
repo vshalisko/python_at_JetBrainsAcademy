@@ -1,0 +1,73 @@
+/* Reset básico */
+body, h1, h2, h3, p, ul, li, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  background-color: #2196F3;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #1976D2;
+}
+
+p, h3 {
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  transition: background-color 0.2s ease;
+}
+
+ul li:hover {
+  background-color: #ececec;
+}
+
+#docs-content {
+  background-color: #e8f5e9;
+  padding: 15px;
+  white-space: pre-wrap;
+  border-radius: 5px;
+  margin-top: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
