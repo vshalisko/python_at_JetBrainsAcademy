@@ -41,3 +41,4 @@ Chronological order of completion
 38) K-Means clustering from scratch (numpy, sklearn metrics)
 39) Tagger (git commands)
 40) Corpus Annotation from scartch (nltk, NLP)
+41) Chatbot Quiz Bot API (openai API)
