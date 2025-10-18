@@ -38,4 +38,5 @@ Chronological order of completion
 35) Key terms extraction (tokenization, lemmatiation, vectorization, NLP)
 36) Easy Bus Ruder Company (JSON data verification, over type and content errors) - pjoject with all code created in Colab with Gemini AI, as a test case for AI code generation with only minor editing (less then 5%)
 37) Web Scrapper
-38) K-Means clustering from scratch (numpy, sklearn metrics) 
+38) K-Means clustering from scratch (numpy, sklearn metrics)
+39) Tagger (git commands)
