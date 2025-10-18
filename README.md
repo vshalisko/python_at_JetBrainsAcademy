@@ -26,19 +26,19 @@ Chronological order of completion
 22) NBA data processing
 23) Data analysis for hospital
 24) Spam filter (sklearn.feature_extraction CountVectorizer, klearn.naive_bayes MultinomialNB)
-26) Arithmetic exam application
-27) A/B test for Delivery app (statistical hypothesis testing in scipy, mathplotlib)
-28) Flashcards (OOP)
-29) Jeopardy - Question answering Bot (NLTK)
-30) Tetris (OOP)
-31) Traffic light (OOP, stage 6 to be rewritten)
-32) Regexp engine (OOP, recursion)
-33) University admission procedure (sorting)
-34) Text generator (tokenization, Markov chains, NLP)
-35) Key terms extraction (tokenization, lemmatiation, vectorization, NLP)
-36) Easy Bus Ruder Company (JSON data verification, over type and content errors) - pjoject with all code created in Colab with Gemini AI, as a test case for AI code generation with only minor editing (less then 5%)
-37) Web Scrapper
-38) K-Means clustering from scratch (numpy, sklearn metrics)
-39) Tagger (git commands)
-40) Corpus Annotation from scartch (nltk, NLP)
-41) Chatbot Quiz Bot API (openai API)
+25) Arithmetic exam application
+26) A/B test for Delivery app (statistical hypothesis testing in scipy, mathplotlib)
+27) Flashcards (OOP)
+28) Jeopardy - Question answering Bot (NLTK)
+29) Tetris (OOP)
+30) Traffic light (OOP, stage 6 to be rewritten)
+31) Regexp engine (OOP, recursion)
+32) University admission procedure (sorting)
+33) Text generator (tokenization, Markov chains, NLP)
+34) Key terms extraction (tokenization, lemmatiation, vectorization, NLP)
+35) Easy Bus Ruder Company (JSON data verification, over type and content errors) - pjoject with all code created in Colab with Gemini AI, as a test case for AI code generation with only minor editing (less then 5%)
+36) Web Scrapper
+37) K-Means clustering from scratch (numpy, sklearn metrics)
+38) Tagger (git commands)
+39) Corpus Annotation from scartch (nltk, NLP)
+40) Chatbot Quiz Bot API (openai API)
