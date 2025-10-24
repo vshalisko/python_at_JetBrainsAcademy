@@ -43,4 +43,4 @@ Chronological order of completion
 39) Corpus Annotation from scartch (nltk, NLP)
 40) Chatbot Quiz Bot API (openai API)
 41) Safety Net (git command line)
-42) Dominoes (https://hyperskill.org/projects/146)
+42) Dominoes (random, nested lists, https://hyperskill.org/projects/146)
