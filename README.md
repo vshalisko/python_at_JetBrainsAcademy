@@ -3,7 +3,7 @@
 
 Chronological order of completion
 1) Last pencil game
-2) Loan calculator
+2) Loan calculator (math, argparse, <https://hyperskill.org/projects/90>)
 3) Hangman game
 4) Currency converter (JSON)
 5) Simple Tic-Tac-Toe game (basic Python, <https://hyperskill.org/projects/73>)
