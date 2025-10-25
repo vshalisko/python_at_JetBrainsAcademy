@@ -6,7 +6,7 @@ Chronological order of completion
 2) Loan calculator
 3) Hangman game
 4) Currency converter (JSON)
-5) Simple Tic-Tac-Toe game
+5) Simple Tic-Tac-Toe game (basic Python, <https://hyperskill.org/projects/73>)
 6) Prime numbers generation (task)
 7) Honest calculator
 8) Read quality control (Bioinformatics)
@@ -43,4 +43,4 @@ Chronological order of completion
 39) Corpus Annotation from scartch (nltk, NLP)
 40) Chatbot Quiz Bot API (openai API)
 41) Safety Net (git command line)
-42) Dominoes (random, nested lists, https://hyperskill.org/projects/146)
+42) Dominoes (random, nested lists, <https://hyperskill.org/projects/146>)
