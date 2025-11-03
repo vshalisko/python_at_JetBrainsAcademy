@@ -44,3 +44,4 @@ Chronological order of completion
 40) Chatbot Quiz Bot API (openai API)
 41) Safety Net (git command line)
 42) Dominoes (random, nested lists, <https://hyperskill.org/projects/146>)
+43) ELISA (Enzyme-linked immunosorbent assay concentration estimation, logistic curve fitting, <https://hyperskill.org/projects/283>)
