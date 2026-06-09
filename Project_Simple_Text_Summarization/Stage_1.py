@@ -10,7 +10,7 @@ except LookupError:
 
 
 def summarize_news(file_path):
-    # Parse the XML file
+
     tree = ET.parse(file_path)
     root = tree.getroot()
 
