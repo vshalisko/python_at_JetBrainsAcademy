@@ -45,4 +45,5 @@ Chronological order of completion
 41) Safety Net (git command line)
 42) Dominoes (random, nested lists, <https://hyperskill.org/projects/146>)
 43) ELISA (Enzyme-linked immunosorbent assay concentration estimation, logistic curve fitting, <https://hyperskill.org/projects/283>)
-44) Simple Text Summarization (tokenizing, lemmatizing, vectorizing, TF-IDF, <https://hyperskill.org/projects/124>)
+44) Markdown Editor (<https://hyperskill.org/projects/162>)
+45) Simple Text Summarization (tokenizing, lemmatizing, vectorizing, TF-IDF, <https://hyperskill.org/projects/124>)
